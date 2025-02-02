@@ -1,0 +1,34 @@
+﻿@model AcunMedyaHospitalProject.Entities.Department
+@{
+    ViewBag.Title = "UpdateDepartment";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="col-md-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Bölüm Güncelleme Formu</h4>
+            <p class="card-description">Bölüm bilgilerini bu formdan güncelleyebilirsiniz.</p>
+            <form method="post" class="forms-sample">
+                <div class="form-group">
+                    <label for="Name">Ad: </label>
+                    @Html.TextBoxFor(x => x.Name, new { @class = "form-control", id = "Name" })
+                    <span class="text-danger">@Html.ValidationMessageFor(x => x.Name)</span>
+                </div>
+
+                <div class="form-group>
+                    <label for="Description">Açıklama: </label>
+                    @Html.TextBoxFor(x => x.Description, new { @class = "form-control", id = "Description" })
+                    <span class="text-danger">@Html.ValidationMessageFor(x => x.Description)</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="image_url">Image Url: </label>
+                    @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control", id = "image_url" })
+                </div>
+
+                <button type="submit" class="btn btn-primary mr-2">Güncelle</button>
+            </form>
+        </div>
+    </div>
+</div>
